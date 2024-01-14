@@ -10,7 +10,7 @@ export default function DropdownForm({ heading, formFields }) {
   };
 
   return (
-    <div className="relative w-full bg-gray-100 ">
+    <div className="relative w-full bg-gray-100 text-gray-700">
       <div className="flex flex-col justify-between p-2 border cursor-pointer rounded-lg">
         <div className="flex justify-between items-center p-5">
           <span className="text-2xl">{heading}</span>

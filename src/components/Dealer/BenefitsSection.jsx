@@ -2,7 +2,7 @@ import React from "react";
 
 export default function BenefitsSection() {
   return (
-    <div className="h-screen w-screen border">
+    <div className="h-screen w-screen border text-gray-700">
       <div className="bg-gray-100 h-full border md:flex md:items-center">
         <div className="w-[90%] m-auto mt-8 md:mt-[10%]">
           <div className="flex items-center gap-x-2">
@@ -12,7 +12,7 @@ export default function BenefitsSection() {
             </h1>
           </div>
           <div className="flex flex-col mt-4 md:flex-row ">
-            <h1 className="w-full md:w-1/2 text-[2.6rem] font-extrabold">
+            <h1 className="w-full md:w-1/2 text-[2.6rem] font-extrabold ">
               Join Our Dealer Network.
             </h1>
             <span className="text-left w-full md:w-1/2 md:mt-0 mt-5">

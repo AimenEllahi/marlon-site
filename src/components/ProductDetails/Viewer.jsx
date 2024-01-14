@@ -15,12 +15,22 @@ const Viewer = () => {
     "/Img3.png",
   ];
 
+  const isDarkMode =
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches;
+
   return (
-    <div className="md:h-[130vh] h-full w-full flex flex-col md:flex-row justify-between">
+    <div
+      className={`md:h-[130vh] h-full w-full flex flex-col md:flex-row justify-between text-gray-700 ${
+        isDarkMode ? "dark" : ""
+      }`}
+    >
       <div className="md:w-3/4 w-full px-16 py-10 ">
         <div className="h-full flex flex-col gap-y-4">
           <div className="border border-black md:h-[60%] h-[40vh] rounded-lg p-4">
-            <span className="text-2xl">360 Viewer</span>
+            <span className={`text-2xl ${isDarkMode ? "text-white" : ""}`}>
+              360 Viewer
+            </span>
             <hr className="border-gray-400 border-1 w-full mt-2" />
           </div>
           <div className=" md:h-[20%] h-[15vh] w-full overflow-auto ">
@@ -40,9 +50,15 @@ const Viewer = () => {
             </div>
           </div>
           <div className="h-[20%] flex flex-col space-y-2">
-            <span className="text-2xl text-gray-700">Description</span>
+            <span
+              className={`text-2xl ${
+                isDarkMode ? "text-white" : "text-gray-700"
+              }`}
+            >
+              Description
+            </span>
             <hr className="border-gray-400 border-1 w-full mt-2" />
-            <span>
+            <span className={isDarkMode ? "text-white" : "text-gray-700"}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
               velit, eaque repudiandae dolores vero provident, eum accusamus,
               minus unde ea est praesentium enim reiciendis corrupti! Architecto
