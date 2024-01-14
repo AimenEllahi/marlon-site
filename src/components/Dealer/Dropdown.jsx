@@ -5,7 +5,7 @@ export default function Dropdown({ label, options = [], onChange, value }) {
     <div className='mt-1'>
       <label className='block text-md font-medium text-gray-700'>{label}</label>
       <select
-        className='form-select block w-full border rounded-md p-2 text-gray-900'
+        className='form-select block w-full border rounded-md p-2 dark:text-slate-200'
         onChange={onChange}
         value={value}
       >
@@ -15,7 +15,7 @@ export default function Dropdown({ label, options = [], onChange, value }) {
         {options?.map((option) => (
           <option
             key={option.value}
-            className='!text-gray-700 '
+            className='dark:text-slate-200'
             value={option.value}
           >
             {option.label}

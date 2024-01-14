@@ -15,7 +15,7 @@ export default function FormComponent({ fields, handleChange }) {
                 </label>
                 {field.type === "textarea" ? (
                   <textarea
-                    className='form-input mt-1 block w-full border rounded-md p-2'
+                    className='form-input mt-1 block w-full border dark:text-slate-200 rounded-md p-2'
                     rows='4'
                     placeholder={field.placeholder}
                     onChange={(e) => handleChange(e, field.key)}
@@ -25,7 +25,7 @@ export default function FormComponent({ fields, handleChange }) {
                 ) : (
                   <input
                     type={field.type || "text"}
-                    className='form-input mt-1 block w-full border rounded-md p-2'
+                    className='form-input mt-1 block w-full border dark:text-slate-200 rounded-md p-2'
                     placeholder={field.placeholder}
                     onChange={(e) => handleChange(e, field.key)}
                     value={field.value}
