@@ -51,16 +51,16 @@ export default function FormComponent({ fields, handleButton, buttonText }) {
             )}
           </div>
         ))}
-
-        <div className="col-span-2 mt-4">
-          <button
-            type="submit"
-            className="bg-blue-500 text-white px-4 py-2 rounded-md"
-          >
-            {buttonText}
-          </button>
-        </div>
       </form>
+
+      <div className="col-span-2 mt-4">
+        <button
+          type="submit"
+          className="bg-blue-500 text-white px-4 py-2 rounded-md"
+        >
+          {buttonText}
+        </button>
+      </div>
     </div>
   );
 }
