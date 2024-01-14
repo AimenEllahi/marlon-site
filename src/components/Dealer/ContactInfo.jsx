@@ -35,7 +35,7 @@ export default function ContactInfo() {
     dealerCity: "",
     reasonForPurchase: "",
   });
-  const [isContactForm, setIsContactForm] = useState(false);
+  const [isContactForm, setIsContactForm] = useState(true);
 
   const handleFormDataChange = (e, field) => {
     setFormData({
@@ -50,8 +50,6 @@ export default function ContactInfo() {
     });
   };
 
-  console.log(formData);
-
   const isProductFormValid = () => {
     const requiredFields = [
       "modelNumber",
@@ -61,7 +59,7 @@ export default function ContactInfo() {
       "dealerCity",
     ];
     const missingFields = requiredFields.filter((field) => !productData[field]);
-
+    console.log(missingFields);
     return missingFields.length === 0;
   };
   const isContactFormValid = () => {
@@ -135,11 +133,11 @@ export default function ContactInfo() {
       </div>
 
       <div className='px-16  m-auto my-10 flex justify-end gap-x-3'>
-        {isContactForm && (
+        {!isContactForm && (
           <button
             className='bg-black text-white px-10 py-2 rounded-md'
             onClick={() => {
-              setIsContactForm(false);
+              setIsContactForm(true);
             }}
           >
             back
@@ -148,17 +146,17 @@ export default function ContactInfo() {
         <button
           className='bg-black disabled:opacity-60 disabled:cursor-not-allowed text-white px-10 py-2 rounded-md'
           disabled={
-            !isContactForm ? !isProductFormValid() : !isContactFormValid()
+            isContactForm ? !isContactFormValid() : !isProductFormValid()
           }
           onClick={() => {
             if (isContactForm) {
-              handleSubmit();
+              setIsContactForm(false);
             } else {
-              setIsContactForm(true);
+              handleSubmit();
             }
           }}
         >
-          {!isContactForm ? "Next" : "Submit"}
+          {isContactForm ? "Next" : "Submit"}
         </button>
       </div>
     </div>

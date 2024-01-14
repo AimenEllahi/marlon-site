@@ -23,7 +23,17 @@ export const formFields = [
     placeholder: "Select country",
     key: "country",
     type: "dropdown",
-    // required: true,
+    required: true,
+    options: [
+      {
+        value: "Canada",
+        label: "Canada",
+      },
+      {
+        value: "USA",
+        label: "USA",
+      },
+    ],
   },
   { label: "Zip Code", placeholder: "Enter zip code", key: "zipCode" },
   {
@@ -39,7 +49,21 @@ export const formFields = [
     placeholder: "Select location",
     key: "location",
     type: "dropdown",
-    // required: true,
+    required: true,
+    options: [
+      {
+        value: "Toronto",
+        label: "Toronto",
+      },
+      {
+        value: "Ontario",
+        label: "Ontario",
+      },
+      {
+        value: "Mississauga",
+        label: "Mississauga",
+      },
+    ],
   },
   {
     label: "Phone",
