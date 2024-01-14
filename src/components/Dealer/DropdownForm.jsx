@@ -2,11 +2,28 @@ import React, { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import FormComponent from "./FormComponent";
 
-export default function DropdownForm({ heading, formFields }) {
+export default function DropdownForm({
+  heading,
+  contactFields,
+  productFields,
+}) {
+  const [isContactFormVisible, setIsContactFormVisible] = useState(true);
+  const [isProductFormVisible, setIsProductFormVisible] = useState(false);
+
   const [isFormVisible, setIsFormVisible] = useState(false);
 
   const handleToggle = () => {
     setIsFormVisible(!isFormVisible);
+  };
+
+  const handleBack = () => {
+    setIsContactFormVisible(true);
+    setIsProductFormVisible(false);
+  };
+
+  const handleContactInfoSubmit = () => {
+    setIsContactFormVisible(false);
+    setIsProductFormVisible(true);
   };
 
   return (
@@ -15,12 +32,25 @@ export default function DropdownForm({ heading, formFields }) {
         <div className="flex justify-between items-center p-5">
           <span className="text-2xl">{heading}</span>
           <div onClick={handleToggle} className="bg-white p-4 rounded-md">
-            {isFormVisible ? <ChevronUp /> : <ChevronDown />}
+            {isFormVisible ? <ChevronDown /> : <ChevronUp />}
           </div>
         </div>
         {isFormVisible && (
-          <div className="transition duration-300">
-            <FormComponent fields={formFields} />
+          <div className="flex flex-col">
+            {isContactFormVisible && (
+              <FormComponent
+                fields={contactFields}
+                handleButton={handleContactInfoSubmit}
+                buttonText="Next"
+              />
+            )}
+            {isProductFormVisible && (
+              <FormComponent
+                fields={productFields}
+                handleButton={handleBack}
+                buttonText="Back"
+              />
+            )}
           </div>
         )}
       </div>

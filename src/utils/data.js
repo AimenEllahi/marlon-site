@@ -23,7 +23,7 @@ export const formFields = [
     placeholder: "Select country",
     key: "country",
     type: "dropdown",
-    required: true,
+    // required: true,
   },
   { label: "Zip Code", placeholder: "Enter zip code", key: "zipCode" },
   {
@@ -39,7 +39,7 @@ export const formFields = [
     placeholder: "Select location",
     key: "location",
     type: "dropdown",
-    required: true,
+    // required: true,
   },
   {
     label: "Phone",

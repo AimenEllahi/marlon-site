@@ -1,19 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import Dropdown from "./Dropdown";
 
-export default function FormComponent({ fields }) {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    // Add your form submission logic here
-    console.log("Form submitted!");
-  };
-
+export default function FormComponent({ fields, handleButton, buttonText }) {
   return (
     <div className="bg-gray-100 w-[97%] h-full mx-auto py-6 border-t-2 rounded-md">
       <form
         className="grid grid-cols-1 md:grid-cols-2 gap-4"
-        onSubmit={handleSubmit}
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleButton();
+        }}
       >
         {fields.map((field, index) => (
           <div key={index} className="mb-4">
@@ -54,6 +50,15 @@ export default function FormComponent({ fields }) {
             )}
           </div>
         ))}
+
+        <div className="col-span-2 mt-4">
+          <button
+            type="submit"
+            className="bg-blue-500 text-white px-4 py-2 rounded-md"
+          >
+            {buttonText}
+          </button>
+        </div>
       </form>
     </div>
   );
