@@ -5,9 +5,9 @@ import DropdownForm from "./DropdownForm";
 import { benefitsList, formFields, productFields } from "../../utils/data";
 
 const ListItem = ({ text }) => (
-  <li className="flex items-center space-x-2">
-    <img src={icon} alt="Bullet Icon" className="w-4 h-4" />
-    <span className="text-xl font-thin">{text}</span>
+  <li className='flex items-center space-x-2'>
+    <img src={icon} alt='Bullet Icon' className='w-4 h-4' />
+    <span className='text-xl font-thin'>{text}</span>
   </li>
 );
 
@@ -61,27 +61,27 @@ export default function ContactInfo() {
   };
 
   return (
-    <div className="w-screen h-full border bg-white">
-      <div className="md:-mt-[22%] -mt-[92%] w-[90%] m-auto h-[80vh] relative">
+    <div className='w-screen h-full border bg-white'>
+      <div className=' -mt-[70%] md:-mt-[22%] w-[90%] m-auto h-[80vh] relative'>
         <img
-          src="/benefits.jpeg"
-          alt=""
-          className="w-full h-full object-cover"
+          src='/benefits.jpeg'
+          alt=''
+          className='w-full h-full object-cover'
         />
-        <div className="absolute top-5 left-0 w-full text-white md:p-12 p-6">
-          <div className="flex flex-col">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold">
+        <div className='absolute top-5 left-0 w-full text-white md:p-12 p-6'>
+          <div className='flex flex-col'>
+            <h1 className='text-2xl md:text-3xl lg:text-4xl font-bold'>
               Benefits of Being a Marlon Dealer
             </h1>
-            <div className="mt-10 flex flex-col md:flex-row">
-              <span className="md:w-1/2 text-sm md:text-base lg:text-lg font-thin md:mr-4">
+            <div className='mt-10 flex flex-col md:flex-row'>
+              <span className='md:w-1/2 text-sm md:text-base lg:text-lg font-thin md:mr-4'>
                 We’ve been listed within the Top 500 Growth-Oriented Companies
                 in Canada for the past 4 years, and we’re committed to
                 continuing that tradition. With 4 well-positioned Marlon
                 locations, you can expect:
               </span>
-              <span className="md:w-1/2 flex items-center justify-center mt-4 md:mt-0">
-                <ul className="list-none space-y-3">
+              <span className='md:w-1/2 flex items-center justify-center mt-4 md:mt-0'>
+                <ul className='list-none space-y-3'>
                   {benefitsList.map((text, index) => (
                     <ListItem key={index} text={text} />
                   ))}
@@ -92,19 +92,19 @@ export default function ContactInfo() {
         </div>
       </div>
 
-      <div className="w-[90%] m-auto my-10">
-        <DropdownForm heading="Contact Information" formFields={formFields} />
+      <div className='w-[90%] m-auto my-10'>
+        <DropdownForm heading='Contact Information' formFields={formFields} />
       </div>
-      <div className="w-[90%] m-auto my-10">
+      <div className='w-[90%] m-auto my-10'>
         <DropdownForm
-          heading="Product Information"
+          heading='Product Information'
           formFields={productFields}
         />
       </div>
-      <div className="w-[90%] m-auto my-10 flex justify-between">
+      <div className='w-[90%] m-auto my-10 flex justify-between'>
         <div></div>
         <button
-          className="bg-black text-white px-10 py-2 rounded-md"
+          className='bg-black text-white px-10 py-2 rounded-md'
           onClick={handleSubmit}
         >
           Submit
