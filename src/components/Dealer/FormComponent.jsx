@@ -9,6 +9,7 @@ export default function FormComponent({ fields, handleButton, buttonText }) {
         onSubmit={(e) => {
           e.preventDefault();
           handleButton();
+          console.log("Form submitted!");
         }}
       >
         {fields.map((field, index) => (
