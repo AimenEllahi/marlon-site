@@ -3,13 +3,7 @@ import FormComponent from "./FormComponent";
 import icon from "/icon.png";
 import DropdownForm from "./DropdownForm";
 import { benefitsList, formFields, productFields } from "../../utils/data";
-
-const ListItem = ({ text }) => (
-  <li className="flex items-center space-x-2">
-    <img src={icon} alt="Bullet Icon" className="w-4 h-4" />
-    <span className="text-xl font-thin">{text}</span>
-  </li>
-);
+import ListItems from "./ListItems";
 
 export default function ContactInfo() {
   const [formData, setFormData] = useState({
@@ -83,7 +77,7 @@ export default function ContactInfo() {
               <span className="md:w-1/2 flex items-center justify-center mt-4 md:mt-0">
                 <ul className="list-none space-y-3">
                   {benefitsList.map((text, index) => (
-                    <ListItem key={index} text={text} />
+                    <ListItems key={index} text={text} />
                   ))}
                 </ul>
               </span>

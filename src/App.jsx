@@ -3,6 +3,9 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
 import Dealer from "./pages/Dealers";
 import ProductDetails from "./pages/ProductDetails";
+import About from "./pages/About";
+import Gallery from "./pages/Gallery";
+import Ambassador from "./pages/Ambassador";
 
 const routes = [
   {
@@ -18,6 +21,30 @@ const routes = [
     element: (
       <Layout>
         <ProductDetails />
+      </Layout>
+    ),
+  },
+  {
+    path: "/about",
+    element: (
+      <Layout>
+        <About />
+      </Layout>
+    ),
+  },
+  {
+    path: "/gallery",
+    element: (
+      <Layout>
+        <Gallery />
+      </Layout>
+    ),
+  },
+  {
+    path: "/ambassador",
+    element: (
+      <Layout>
+        <Ambassador />
       </Layout>
     ),
   },

@@ -97,6 +97,11 @@ export const productFields = [
     key: "productSubCategory",
     type: "dropdown",
     required: true,
+    options: [
+      { value: "1", label: "Reason 1" },
+      { value: "2", label: "Reason 2" },
+      { value: "3", label: "Reason 3" },
+    ],
   },
 ];
 
@@ -105,6 +110,12 @@ export const benefitsList = [
   "Passionate Support Staff",
   "Vast Product Array",
   "Continued Product Innovation",
+];
+
+export const productBenefitsList = [
+  "Vast Product Selection & Availability",
+  "Timely Parts and Service Support",
+  "Progressive Product Innovations",
 ];
 
 export const accessoriesList = [
@@ -154,5 +165,98 @@ export const featuresList = [
       "Description: 5’ x 8’ ATV Trailer",
       "Price: $1,299.00",
     ],
+  },
+];
+
+export const FilterButtons = [
+  {
+    label: "All",
+  },
+  {
+    label: "British Columbia",
+  },
+  {
+    label: "Alberta",
+  },
+  {
+    label: "Manitoba",
+  },
+  {
+    label: "Washington",
+  },
+  {
+    label: "California",
+  },
+];
+
+export const galleryFilterButtons = [
+  {
+    label: "All",
+  },
+  {
+    label: "Boats",
+  },
+  {
+    label: "Docks/Lifts",
+  },
+  {
+    label: "Trailers",
+  },
+  {
+    label: "Truck Decks",
+  },
+];
+
+export const ambFilterButtons = [
+  {
+    label: "All",
+  },
+  {
+    label: "Fishing",
+  },
+  {
+    label: "Hunting",
+  },
+  {
+    label: "Snowboarding",
+  },
+  {
+    label: "Jet Skiing",
+  },
+  {
+    label: "Snowmobiling",
+  },
+];
+
+export const cardData = [
+  {
+    name: "Bruce Cameron",
+    post: "President and CEO",
+    image: "/aboutimg.png",
+  },
+  {
+    name: "Bruce Cameron",
+    post: "President and CEO",
+    image: "/aboutimg.png",
+  },
+  {
+    name: "Bruce Cameron",
+    post: "President and CEO",
+    image: "/aboutimg.png",
+  },
+  {
+    name: "Bruce Cameron",
+    post: "President and CEO",
+    image: "/aboutimg.png",
+  },
+  {
+    name: "Bruce Cameron",
+    post: "President and CEO",
+    image: "/aboutimg.png",
+  },
+  {
+    name: "Bruce Cameron",
+    post: "President and CEO",
+    image: "/aboutimg.png",
   },
 ];
