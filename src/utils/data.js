@@ -23,7 +23,17 @@ export const formFields = [
     placeholder: "Select country",
     key: "country",
     type: "dropdown",
-    // required: true,
+    required: true,
+    options: [
+      {
+        value: "Canada",
+        label: "Canada",
+      },
+      {
+        value: "USA",
+        label: "USA",
+      },
+    ],
   },
   { label: "Zip Code", placeholder: "Enter zip code", key: "zipCode" },
   {
@@ -39,7 +49,21 @@ export const formFields = [
     placeholder: "Select location",
     key: "location",
     type: "dropdown",
-    // required: true,
+    required: true,
+    options: [
+      {
+        value: "Toronto",
+        label: "Toronto",
+      },
+      {
+        value: "Ontario",
+        label: "Ontario",
+      },
+      {
+        value: "Mississauga",
+        label: "Mississauga",
+      },
+    ],
   },
   {
     label: "Phone",
@@ -64,37 +88,37 @@ export const productFields = [
   {
     label: "Model Number",
     placeholder: "Enter model number",
-    key: "productName",
+    key: "modelNumber",
     required: true,
   },
   {
     label: "Serial Number",
     placeholder: "Enter serial number",
-    key: "productDescription",
+    key: "serialNumber",
     required: true,
   },
   {
     label: "Date Purchased",
     placeholder: "Enter purchased date",
-    key: "productPrice",
+    key: "datePurchased",
     required: true,
   },
   {
     label: "Dealer Name ",
     placeholder: "Enter dealer name",
-    key: "productQuantity",
+    key: "dealerName",
     required: true,
   },
   {
     label: "Dealer City",
     placeholder: "Enter dealer city",
-    key: "productQuantity",
+    key: "dealerCity",
     required: true,
   },
   {
     label: "Reason for Purchase",
     placeholder: "Select a reason",
-    key: "productSubCategory",
+    key: "reasonForPurchase",
     type: "dropdown",
     required: true,
     options: [

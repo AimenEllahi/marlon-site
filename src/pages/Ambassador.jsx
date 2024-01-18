@@ -3,6 +3,7 @@ import Introduction from "../components/Ambassador/Introduction";
 import Us from "../components/About/Us";
 
 export default function Ambassador() {
+  //methods
   return (
     <div>
       <Introduction />

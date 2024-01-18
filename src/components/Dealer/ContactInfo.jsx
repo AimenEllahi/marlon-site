@@ -3,7 +3,13 @@ import FormComponent from "./FormComponent";
 import icon from "/icon.png";
 import DropdownForm from "./DropdownForm";
 import { benefitsList, formFields, productFields } from "../../utils/data";
-import ListItems from "./ListItems";
+
+const ListItem = ({ text }) => (
+  <li className="flex items-center space-x-2">
+    <img src={icon} alt="Bullet Icon" className="w-4 h-4" />
+    <span className="text-xl font-thin">{text}</span>
+  </li>
+);
 
 export default function ContactInfo() {
   const [formData, setFormData] = useState({
@@ -21,18 +27,42 @@ export default function ContactInfo() {
     alternateNumber: "",
     email: "",
   });
+  const [productData, setProductData] = useState({
+    modelNumber: "",
+    serialNumber: "",
+    datePurchased: "",
+    dealerName: "",
+    dealerCity: "",
+    reasonForPurchase: "",
+  });
+  const [isContactForm, setIsContactForm] = useState(true);
 
-  const handleInputChange = (e, field) => {
+  const handleFormDataChange = (e, field) => {
     setFormData({
       ...formData,
       [field]: e.target.value,
     });
   };
+  const handleProductDataChange = (e, field) => {
+    setProductData({
+      ...productData,
+      [field]: e.target.value,
+    });
+  };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    // Check if required fields are filled
+  const isProductFormValid = () => {
+    const requiredFields = [
+      "modelNumber",
+      "serialNumber",
+      "datePurchased",
+      "dealerName",
+      "dealerCity",
+    ];
+    const missingFields = requiredFields.filter((field) => !productData[field]);
+    console.log(missingFields);
+    return missingFields.length === 0;
+  };
+  const isContactFormValid = () => {
     const requiredFields = [
       "businessName",
       "firstName",
@@ -46,7 +76,13 @@ export default function ContactInfo() {
     ];
     const missingFields = requiredFields.filter((field) => !formData[field]);
 
-    if (missingFields.length > 0) {
+    return missingFields.length === 0;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!isContactFormValid()) {
       alert(`Please fill in the required fields: ${missingFields.join(", ")}`);
     } else {
       // Add your form submission logic here
@@ -88,24 +124,39 @@ export default function ContactInfo() {
 
       <div className="w-[90%] m-auto my-10">
         <DropdownForm
-          heading="Information"
           contactFields={formFields}
           productFields={productFields}
+          handleFormDataChange={handleFormDataChange}
+          handleProductDataChange={handleProductDataChange}
+          isContactForm={isContactForm}
         />
       </div>
-      {/* <div className='w-[90%] m-auto my-10'>
-        <DropdownForm
-          heading='Product Information'
-          formFields={productFields}
-        />
-      </div> */}
-      <div className="w-[90%] m-auto my-10 flex justify-between">
-        <div></div>
+
+      <div className="px-16  m-auto my-10 flex justify-end gap-x-3">
+        {!isContactForm && (
+          <button
+            className="bg-black text-white px-10 py-2 rounded-md"
+            onClick={() => {
+              setIsContactForm(true);
+            }}
+          >
+            back
+          </button>
+        )}
         <button
-          className="bg-black text-white px-10 py-2 rounded-md"
-          onClick={handleSubmit}
+          className="bg-black disabled:opacity-60 disabled:cursor-not-allowed text-white px-10 py-2 rounded-md"
+          disabled={
+            isContactForm ? !isContactFormValid() : !isProductFormValid()
+          }
+          onClick={() => {
+            if (isContactForm) {
+              setIsContactForm(false);
+            } else {
+              handleSubmit();
+            }
+          }}
         >
-          Submit
+          {isContactForm ? "Next" : "Submit"}
         </button>
       </div>
     </div>
