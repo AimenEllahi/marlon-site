@@ -8,17 +8,17 @@ export default function Us({
   buttonLink,
 }) {
   return (
-    <div className="relative w-full h-full my-10">
+    <div className="relative w-full h-full">
       <img src={image} alt="" className="w-full h-full object-cover" />
 
       <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
-        <div className="flex items-center justify-center gap-x-2 mb-10">
+        <div className="flex items-center justify-center gap-x-2 md:mb-10 mb-2">
           <img src="/icon.png" alt="" />
           <h1 className="text-lg font-extrabold md:text-xl lg:text-xl tracking-wide">
             {heading}
           </h1>
         </div>
-        <p className="font-bold md:text-5xl text-lg text-center w-[80%] mb-10">
+        <p className="font-bold md:text-5xl text-lg text-center w-[80%] md:mb-10 mb-2">
           {description}
         </p>
         <button

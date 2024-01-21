@@ -6,7 +6,7 @@ export default function IntroSection() {
   return (
     <div className="h-full w-screen text-gray-700 ">
       <div className="bg-white h-full md:flex-row md:items-center">
-        <div className="w-[90%] h-full m-auto mt-8 md:mt-[10%]">
+        <div className="w-[90%] h-full m-auto pt-8 md:pt-[10%]">
           <div className="flex items-center gap-x-2">
             <img src="/icon.png" alt="" />
             <h1 className="text-2xl font-extrabold md:text-xl lg:text-xl tracking-wide">

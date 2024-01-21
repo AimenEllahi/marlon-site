@@ -8,7 +8,7 @@ const Filters = ({ filterButtons }) => {
         <SlidersHorizontal size={20} />
         <h1 className="text-xl font-bold ml-2">Filters</h1>
       </div>
-      <div className="flex space-x-2">
+      <div className="flex flex-col md:flex-row gap-x-2">
         {filterButtons.map((button, index) => (
           <button
             key={index}

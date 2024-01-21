@@ -19,7 +19,7 @@ export default function Community() {
           </p>
         </div>
       </div>
-      <div className="bg-white w-[90%] m-auto h-full md:flex-row md:items-center">
+      <div className="bg-white w-[100%] m-auto h-full md:flex-row md:items-center p-5">
         <Filters filterButtons={galleryFilterButtons} />
         <ImageLayout />
         <div className=" flex items-center justify-center">

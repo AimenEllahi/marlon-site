@@ -3,13 +3,7 @@ import FormComponent from "./FormComponent";
 import icon from "/icon.png";
 import DropdownForm from "./DropdownForm";
 import { benefitsList, formFields, productFields } from "../../utils/data";
-
-const ListItem = ({ text }) => (
-  <li className="flex items-center space-x-2">
-    <img src={icon} alt="Bullet Icon" className="w-4 h-4" />
-    <span className="text-xl font-thin">{text}</span>
-  </li>
-);
+import ListItems from "./ListItems";
 
 export default function ContactInfo() {
   const [formData, setFormData] = useState({
