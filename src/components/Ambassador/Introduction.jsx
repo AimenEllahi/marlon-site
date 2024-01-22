@@ -31,6 +31,7 @@ export default function Introduction() {
                   image={item.image}
                   name={item.name}
                   post={""}
+                  showAdditionalInfo={true}
                 />
               ))}
             </div>

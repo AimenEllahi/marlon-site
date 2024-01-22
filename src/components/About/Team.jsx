@@ -28,6 +28,7 @@ export default function Team() {
                 image={item.image}
                 name={item.name}
                 post={item.post}
+                showAdditionalInfo={false}
               />
             ))}
           </div>
